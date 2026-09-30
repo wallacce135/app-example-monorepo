@@ -1,0 +1,23 @@
+{
+  "name": "app-example-monorepo",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Пример монорепозитория (Next.js + NestJS) для Timeweb Cloud Apps",
+  "engines": {
+    "node": ">=20.11"
+  },
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "concurrently -k -n backend,frontend -c blue,green \"npm run start:dev -w backend\" \"npm run dev -w frontend\"",
+    "build": "npm run build -w backend && npm run build -w frontend",
+    "build:backend": "npm run build -w backend",
+    "build:frontend": "npm run build -w frontend",
+    "start:backend": "npm run start:prod -w backend",
+    "start:frontend": "npm run start -w frontend"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.5"
+  }
+}
