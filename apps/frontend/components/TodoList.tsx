@@ -21,6 +21,8 @@ export function TodoList() {
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
 
+  console.log('new test frontend change');
+
   useEffect(() => {
     request<Todo[]>('/api/todos')
       .then(setTodos)
