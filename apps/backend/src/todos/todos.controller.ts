@@ -19,6 +19,7 @@ export class TodosController {
 
   @Get()
   findAll() {
+    console.log('test change backend');
     return this.todosService.findAll();
   }
 
